@@ -60,14 +60,14 @@
 
 **Windows (PowerShell):**
 ```powershell
-git clone https://github.com/hirotomasato/autoclawpi.git
+git clone https://github.com/IngKevinDavid/autoclawpi.git
 cd autoclawpi
 go build -o autoclawpi.exe ./cmd/autoclawpi
 ```
 
 **Linux:**
 ```bash
-git clone https://github.com/hirotomasato/autoclawpi.git
+git clone https://github.com/IngKevinDavid/autoclawpi.git
 cd autoclawpi
 go build -o ~/.local/bin/autoclawpi ./cmd/autoclawpi
 ```
