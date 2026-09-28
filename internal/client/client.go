@@ -576,7 +576,6 @@ func (c *Client) InferenceHeader(accessToken, routeModelID string) map[string]st
 		"X-Request-Id":    sign.UUID(),
 		"X-Request-Model": routeModelID,
 		"X-Product":       "autoclaw",
-		"X-Harness-Type":  "zcode",
 		"X-Tm":            "windows",
 		"X-Version":       c.Version,
 		"X-Lang":          "id",
