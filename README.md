@@ -62,6 +62,11 @@
 ```powershell
 git clone https://github.com/IngKevinDavid/autoclawpi.git
 cd autoclawpi
+
+# Automated build script:
+.\install.ps1
+
+# Or manual compilation:
 go build -o autoclawpi.exe ./cmd/autoclawpi
 ```
 
@@ -74,6 +79,16 @@ go build -o ~/.local/bin/autoclawpi ./cmd/autoclawpi
 
 ### Run
 
+**Windows (PowerShell):**
+```powershell
+# Quick start with default settings (port 8787, password: admin):
+.\start-server.ps1
+
+# Or with custom options:
+.\start-server.ps1 -Port 8787 -WebPassword "yourpassword" -ApiKey "sk-your-key"
+```
+
+**Linux / CLI:**
 ```bash
 # Start server with password
 autoclawpi serve --port 8787 --web-password yourpassword
