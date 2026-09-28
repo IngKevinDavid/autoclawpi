@@ -157,7 +157,9 @@ func TestRouteID_VerifiedModels(t *testing.T) {
 		"glm-5.3":           "zaicoding_glm-5.3",
 		"glm-5.3-flash":     "zai_glm-5.3-flash",
 		"deepseek-v4-pro":   "tdpsk_deepseek-v4-pro-202606",
+		"deepseek-v4":       "tdpsk_deepseek-v4-pro-202606",
 		"deepseek-v4-flash": "tdpsk_deepseek-v4-flash-202605",
+		"deepseek-v4.1-flash": "tdpsk_deepseek-v4-flash-202605",
 	}
 	for model, wantRoute := range cases {
 		got := client.RouteID(model)

@@ -590,9 +590,9 @@ func RouteID(model string) string {
 	}
 	// DeepSeek model pakai prefix tdpsk_ + versi date.
 	switch model {
-	case "deepseek-v4-pro":
+	case "deepseek-v4-pro", "deepseek-v4":
 		return "tdpsk_deepseek-v4-pro-202606"
-	case "deepseek-v4-flash":
+	case "deepseek-v4.1-flash", "deepseek-v4-flash", "deepseek-v4.1":
 		return "tdpsk_deepseek-v4-flash-202605"
 	}
 	if isVersioned(model) {

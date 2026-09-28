@@ -984,17 +984,17 @@ func logUsage(acctID int64, model string, body []byte) {
 
 // handleModels menangani /v1/models.
 func (s *Server) handleModels(w http.ResponseWriter, _ *http.Request) {
-	// Model yang sudah diverifikasi bisa inference (2026-09-05).
-	// CATATAN (2026-09-15): "glm-5-turbo" dihapus — diverifikasi 400 非法模型
-	// di semua varian route id (zai_/zaicoding_glm-5-turbo, glm-4.6, glm-4.5, ...),
-	// jadi model ini tidak lagi ada di upstream. Jangan iklankan sebagai tersedia.
+	// Model yang sudah diverifikasi aktif di upstream AutoClaw (2026-09-28).
+	// glm-5.3, glm-5.3-flash, deepseek-v4.1-flash, deepseek-v4-pro, auto, auto-fast.
 	models := []map[string]any{
-		{"id": "auto", "object": "model", "created": 1, "owned_by": "autoclaw"},
-		{"id": "auto-fast", "object": "model", "created": 1, "owned_by": "autoclaw"},
 		{"id": "glm-5.3", "object": "model", "created": 1, "owned_by": "autoclaw"},
 		{"id": "glm-5.3-flash", "object": "model", "created": 1, "owned_by": "autoclaw"},
-		{"id": "deepseek-v4-pro", "object": "model", "created": 1, "owned_by": "autoclaw"},
+		{"id": "deepseek-v4.1-flash", "object": "model", "created": 1, "owned_by": "autoclaw"},
 		{"id": "deepseek-v4-flash", "object": "model", "created": 1, "owned_by": "autoclaw"},
+		{"id": "deepseek-v4-pro", "object": "model", "created": 1, "owned_by": "autoclaw"},
+		{"id": "deepseek-v4", "object": "model", "created": 1, "owned_by": "autoclaw"},
+		{"id": "auto", "object": "model", "created": 1, "owned_by": "autoclaw"},
+		{"id": "auto-fast", "object": "model", "created": 1, "owned_by": "autoclaw"},
 	}
 	writeJSON(w, 200, map[string]any{"object": "list", "data": models})
 }
